@@ -1,20 +1,15 @@
 {
   "extends": [
-    "next/core-web-vitals",
-    "airbnb-typescript",
     "prettier",
-    "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@next/next/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:sonarjs/recommended",
+    "plugin:react/recommended"
   ],
   "plugins": [
     "@typescript-eslint",
     "react",
     "react-hooks",
-    "jsx-a11y",
     "import"
   ],
   "env": {
@@ -37,18 +32,16 @@
     },
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [".ts", ".tsx"]
       }
     }
   },
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
-    "react/react-in-jsx-scope": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "no-console": "warn",
-    "react/prop-types": "off",
     "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-explicit-any": "warn"
+    "react/prop-types": ["off"]
   }
 }
