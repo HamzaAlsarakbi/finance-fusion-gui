@@ -1,6 +1,9 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
+    "baseUrl": "./",
+    "paths": { "@/*": ["./*"] },
     "lib": [
       "dom",
       "dom.iterable",
@@ -18,9 +21,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "plugins": [{ "name": "next" }]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

@@ -1,10 +1,11 @@
 {
   "extends": [
-    "prettier",
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:sonarjs/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "prettier"
   ],
   "plugins": [
     "@typescript-eslint",
