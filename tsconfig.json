@@ -24,6 +24,6 @@
     "jsx": "react-jsx",
     "plugins": [{ "name": "next" }]
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "src/pages/Login"],
   "exclude": ["node_modules"]
 }
