@@ -1,5 +1,4 @@
-import { createAppSlice } from '@/src/redux-store/createAppSlice';
-import type { AppThunk } from '@/src/redux-store/store';
+import { createAppSlice } from '@/app/createAppSlice';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 interface LoginForm {
