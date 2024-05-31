@@ -3,19 +3,19 @@ module.exports = {
   env: { browser: true, es2020: true },
   extends: [
     'eslint:recommended',
-    'prettier',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:sonarjs/recommended',
+    // 'plugin:sonarjs/recommended',
   ],
   plugins: [
     'react-refresh',
     '@typescript-eslint',
     'react',
     'react-hooks',
-    'import'
+    'import',
+    'unused-imports'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -45,8 +45,19 @@ module.exports = {
     'react/jsx-filename-extension': [1, { 'extensions': ['.tsx'] }],
     'import/no-extraneous-dependencies': ['error', { 'devDependencies': true }],
     'no-console': 'warn',
-    '@typescript-eslint/no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        'argsIgnorePattern': '^_',
+        'varsIgnorePattern': '^React$',
+      }
+    ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    'react/prop-types': ['off']
+    'react/prop-types': ['off'],
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      { 'vars': 'all', 'varsIgnorePattern': '^_', 'args': 'after-used', 'argsIgnorePattern': '^_' }
+    ],
   },
-}
+};
