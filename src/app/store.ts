@@ -1,12 +1,14 @@
 import { combineSlices, configureStore } from '@reduxjs/toolkit';
 import { loginSlice } from '@/features/login/loginSlice';
 import { planSlice } from '@/features/plan/planSlice';
+import { appSlice } from '@/features/app/appSlice';
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
-const rootReducer = combineSlices(loginSlice, planSlice);
+const rootReducer = combineSlices(appSlice, loginSlice, planSlice);
 // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>;
+export type AppDispatch = typeof store.dispatch;
 
 // `store` encapsulates the store configuration to allow
 // creating unique store instances, which is particularly important for

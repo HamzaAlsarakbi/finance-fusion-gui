@@ -1,12 +1,20 @@
 import './App.css'
-import { Checkbox } from '@nextui-org/react'
+import { selectPath } from '@/features/app/appSelectors'
+import { useRootSelector } from '@/hooks/useTypesSelector';
+import Login from '@/pages/Login';
 
 function App() {
+  const path = useRootSelector(selectPath);
 
   return (
-    <div>
-      <Checkbox>Selected</Checkbox>
-    </div>
+    <>
+      {path === 'login' ? (
+        <Login />
+      ) : (
+        <Login />
+        // <Dashboard />
+      )}
+    </>
   )
 }
 

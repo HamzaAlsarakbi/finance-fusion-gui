@@ -30,26 +30,18 @@ export const loginSlice = createAppSlice({
       state.attempts = 0;
     }),
     // Use the `PayloadAction` type to declare the contents of `action.payload`
-    setForm: create.reducer(
-      (state, action: PayloadAction<LoginForm>) => {
-        const { username, password } = action.payload;
-        state.username = username;
-        state.password = password;
+    setUsername: create.reducer(
+      (state, action: PayloadAction<string>) => {
+        state.username = action.payload;
+      },
+    ),
+    setPassword: create.reducer(
+      (state, action: PayloadAction<string>) => {
+        state.username = action.payload;
       },
     ),
   }),
-  // You can define your selectors here. These selectors receive the slice
-  // state as their first argument.
-  selectors: {
-    selectUsername: (login: LoginSliceState) => login.username,
-    selectPassword: (login: LoginSliceState) => login.password,
-    selectAttempts: (login: LoginSliceState) => login.attempts,
-  },
 });
 
 // Action creators are generated for each case reducer function.
-export const { incrementAttempt, resetAttempts, setForm } = loginSlice.actions;
-
-// Selectors returned by `slice.selectors` take the root state as their first argument.
-export const { selectUsername, selectPassword, selectAttempts } =
-  loginSlice.selectors;
+export const { incrementAttempt, resetAttempts, setUsername, setPassword } = loginSlice.actions;
