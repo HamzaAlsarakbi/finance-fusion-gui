@@ -1,12 +1,12 @@
+import LoginComponent from '@/features/login/LoginComponent';
 import React from 'react';
-import LoginComponent from '@/features/login/loginComponent';
 
 const Login: React.FC = () => {
-    return (
-        <div className="login">
-            <LoginComponent />
-        </div>
-    );
+  return (
+    <div className='page flex flex-col justify-center items-center'>
+      <LoginComponent />
+    </div>
+  );
 };
 
 export default Login;
