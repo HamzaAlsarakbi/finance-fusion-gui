@@ -1,20 +1,21 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import eslintPlugin from 'vite-plugin-eslint';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import eslintPlugin from "vite-plugin-eslint";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   // use @/ to resolve src/ directory
   resolve: {
     alias: {
-      '@': '/src',
+      "@": "/src",
     },
   },
-  plugins: [react(),
-  eslintPlugin({
-    cache: false,
-    include: ['src/**/*.ts', 'src/**/*.tsx'],
-    exclude: ['node_modules', 'dist'],
-  }),
+  plugins: [
+    react(),
+    eslintPlugin({
+      cache: false,
+      include: ["src/**/*.ts", "src/**/*.tsx"],
+      exclude: ["node_modules", "dist"],
+    }),
   ],
-})
+});

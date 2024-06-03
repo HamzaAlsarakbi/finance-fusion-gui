@@ -1,5 +1,5 @@
-import { createAppSlice } from '@/app/createAppSlice';
-import type { PayloadAction } from '@reduxjs/toolkit';
+import { createAppSlice } from "@/app/createAppSlice";
+import type { PayloadAction } from "@reduxjs/toolkit";
 
 interface PlanForm {
   username: string;
@@ -11,14 +11,14 @@ export interface PlanSliceState extends PlanForm {
 }
 
 const initialState: PlanSliceState = {
-  username: '',
-  password: '',
+  username: "",
+  password: "",
   attempts: 0,
 };
 
 // If you are not using async thunks you can use the standalone `createSlice`.
 export const planSlice = createAppSlice({
-  name: 'plan',
+  name: "plan",
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
@@ -30,13 +30,11 @@ export const planSlice = createAppSlice({
       state.attempts = 0;
     }),
     // Use the `PayloadAction` type to declare the contents of `action.payload`
-    setForm: create.reducer(
-      (state, action: PayloadAction<PlanForm>) => {
-        const { username, password } = action.payload;
-        state.username = username;
-        state.password = password;
-      },
-    ),
+    setForm: create.reducer((state, action: PayloadAction<PlanForm>) => {
+      const { username, password } = action.payload;
+      state.username = username;
+      state.password = password;
+    }),
   }),
   // You can define your selectors here. These selectors receive the slice
   // state as their first argument.

@@ -1,47 +1,41 @@
-import { createAppSlice } from '@/app/createAppSlice';
-import type { PayloadAction } from '@reduxjs/toolkit';
+// loginSlice.ts
+import { StateCreator } from "zustand";
 
 interface LoginForm {
   username: string;
   password: string;
 }
 
-export interface LoginSliceState extends LoginForm {
-  attempts: number;
+export interface LoginSlice {
+  login: LoginForm & {
+    attempts: number;
+    incrementAttempt: () => void;
+    resetAttempts: () => void;
+    setUsername: (username: string) => void;
+    setPassword: (password: string) => void;
+  };
 }
 
-const initialState: LoginSliceState = {
-  username: '',
-  password: '',
-  attempts: 0,
-};
-
-// If you are not using async thunks you can use the standalone `createSlice`.
-export const loginSlice = createAppSlice({
-  name: 'login',
-  // `createSlice` will infer the state type from the `initialState` argument
-  initialState,
-  // The `reducers` field lets us define reducers and generate associated actions
-  reducers: (create) => ({
-    incrementAttempt: create.reducer((state) => {
-      state.attempts++;
-    }),
-    resetAttempts: create.reducer((state) => {
-      state.attempts = 0;
-    }),
-    // Use the `PayloadAction` type to declare the contents of `action.payload`
-    setUsername: create.reducer(
-      (state, action: PayloadAction<string>) => {
-        state.username = action.payload;
-      },
-    ),
-    setPassword: create.reducer(
-      (state, action: PayloadAction<string>) => {
-        state.username = action.payload;
-      },
-    ),
-  }),
+export const createLoginSlice: StateCreator<LoginSlice> = (
+  set,
+): LoginSlice => ({
+  login: {
+    username: "",
+    password: "",
+    attempts: 0,
+    incrementAttempt: () =>
+      set((state) => ({
+        login: { ...state.login, attempts: state.login.attempts + 1 },
+      })),
+    resetAttempts: () =>
+      set((state) => ({ login: { ...state.login, attempts: 0 } })),
+    setUsername: (username) =>
+      set((state) => ({
+        login: { ...state.login, username: username.trim() },
+      })),
+    setPassword: (password) =>
+      set((state) => ({
+        login: { ...state.login, password: password.trim() },
+      })),
+  },
 });
-
-// Action creators are generated for each case reducer function.
-export const { incrementAttempt, resetAttempts, setUsername, setPassword } = loginSlice.actions;

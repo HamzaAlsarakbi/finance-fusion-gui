@@ -1,32 +1,19 @@
-import { createAppSlice } from '@/app/createAppSlice';
-import type { PayloadAction } from '@reduxjs/toolkit';
+import { Theme } from "@/assets/themes/themes";
+import { StateCreator } from "zustand";
 
-
-interface AppSlice {
-    path: 'login' | 'plan/dashboard';
-    theme: 'light' | 'dark';
-    isLoading: boolean;
+export interface AppSlice {
+  app: {
+    theme: Theme;
+    path: "splash" | "login" | "dashboard";
+    setTheme: (theme: Theme) => void;
+  };
 }
 
-const initialState: AppSlice = {
-    path: 'login',
-    theme: 'dark',
-    isLoading: false,
-};
-
-
-export const appSlice = createAppSlice({
-    name: 'app',
-    initialState,
-    reducers: (create) => ({
-        setPath: create.reducer((state, action: PayloadAction<AppSlice['path']>) => {
-            state.path = action.payload;
-        }),
-        setTheme: create.reducer((state, action: PayloadAction<AppSlice['theme']>) => {
-            state.theme = action.payload;
-        }),
-        setIsLoading: create.reducer((state, action: PayloadAction<boolean>) => {
-            state.isLoading = action.payload;
-        }),
-    }),
+export const createAppSlice: StateCreator<AppSlice> = (set): AppSlice => ({
+  app: {
+    theme: "light",
+    // TODO: change to splash
+    path: "login",
+    setTheme: (theme) => set((state) => ({ app: { ...state.app, theme } })),
+  },
 });
