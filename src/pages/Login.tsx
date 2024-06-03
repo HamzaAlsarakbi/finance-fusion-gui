@@ -1,5 +1,5 @@
-import LoginComponent from "@/features/login/LoginComponent";
-import React from "react";
+import LoginComponent from '@/features/login/LoginComponent';
+import React from 'react';
 
 const Login: React.FC = () => {
   return (

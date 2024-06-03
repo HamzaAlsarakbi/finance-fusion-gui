@@ -8,7 +8,7 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:react/jsx-runtime",
     // 'plugin:sonarjs/recommended',
-    "prettier",
+    "plugin:prettier/recommended",
   ],
   plugins: [
     "react-refresh",
@@ -17,6 +17,7 @@ module.exports = {
     "react-hooks",
     "import",
     "unused-imports",
+    "prettier",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
@@ -40,7 +41,7 @@ module.exports = {
     },
   },
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': ["error", { "singleQuote": true }],
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },

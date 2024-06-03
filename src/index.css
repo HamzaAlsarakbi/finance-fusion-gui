@@ -14,6 +14,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --glow-border: hsla(0, 0%, 100%, 0.1);
+  --accent-1: #5d5dfa;
+  --accent-2: #fa625d;
 }
 
 body {
@@ -44,6 +46,7 @@ body {
   width: 100vw;
   height: 100vh;
   padding: 0;
+  max-width: unset !important;;
 }
 
 .gap-1 {
@@ -60,4 +63,16 @@ body {
 
 .glow-bottom {
   border-bottom: 1px solid var(--glow-border);
+}
+
+.fancy-text {
+  background: -webkit-linear-gradient(45deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.2;
 }

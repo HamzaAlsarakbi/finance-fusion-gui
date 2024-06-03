@@ -1,14 +1,13 @@
-import "./App.css";
-import { selectPath } from "@/features/app/appSelectors";
-import { useRootSelector } from "@/hooks/useTypesSelector";
-import Login from "@/pages/Login";
+import './App.css';
+import Login from '@/pages/Login';
+import { useBoundedStore } from './features/store';
 
 function App() {
-  const path = useRootSelector(selectPath);
+  const path = useBoundedStore((state) => state.app.path);
 
   return (
     <>
-      {path === "login" ? (
+      {path === 'login' ? (
         <Login />
       ) : (
         <Login />

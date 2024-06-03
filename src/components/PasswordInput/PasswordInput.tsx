@@ -1,14 +1,14 @@
-import { Input, InputProps } from "@nextui-org/react";
-import { useState } from "react";
-import { EyeSlashFilledIcon } from "@/components/icons/EyeSlashFilledIcon";
-import { EyeFilledIcon } from "@/components/icons/EyeFilledIcon";
+import { Input, InputProps } from '@nextui-org/react';
+import { useState } from 'react';
+import { EyeSlashFilledIcon } from '@/components/icons/EyeSlashFilledIcon';
+import { EyeFilledIcon } from '@/components/icons/EyeFilledIcon';
 
 export const PasswordInput = (props: InputProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
     <Input
-      type={isVisible ? "text" : "password"}
+      type={isVisible ? 'text' : 'password'}
       label="Password"
       className="max-w-xs"
       endContent={

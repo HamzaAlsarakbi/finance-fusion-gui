@@ -1,5 +1,5 @@
 // loginSlice.ts
-import { StateCreator } from "zustand";
+import { StateCreator } from 'zustand';
 
 interface LoginForm {
   username: string;
@@ -20,8 +20,8 @@ export const createLoginSlice: StateCreator<LoginSlice> = (
   set,
 ): LoginSlice => ({
   login: {
-    username: "",
-    password: "",
+    username: '',
+    password: '',
     attempts: 0,
     incrementAttempt: () =>
       set((state) => ({

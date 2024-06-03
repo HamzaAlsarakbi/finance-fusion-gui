@@ -1,11 +1,12 @@
-import { Button, Input } from "@nextui-org/react";
-import React from "react";
-import { PasswordInput } from "@/components/PasswordInput/PasswordInput";
-import "./LoginComponent.css";
-import { useBoundedStore } from "../store";
+import { Button, Input } from '@nextui-org/react';
+import React, { useState } from 'react';
+import { PasswordInput } from '@/components/PasswordInput/PasswordInput';
+import './LoginComponent.css';
+import { useBoundedStore } from '../store';
 
 const LoginComponent: React.FC = () => {
   const login = useBoundedStore((state) => state.login);
+  const [error, setError] = useState('');
 
   const handleUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
     login.setUsername(event.target.value);
@@ -16,12 +17,12 @@ const LoginComponent: React.FC = () => {
   };
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    console.log("login weeee");
+    setError('error!!!');
   };
 
   return (
     <div className="login-component glow-top flex flex-col px-4 gap-1 rounded-medium">
-      <h1>Al Ameen</h1>
+      <h1 className="title fancy-text">Finance Fusion</h1>
       <h2>Login</h2>
       <form onSubmit={handleSubmit} className="flex flex-col px-4 gap-1">
         <Input
@@ -44,6 +45,7 @@ const LoginComponent: React.FC = () => {
           <Button>Login</Button>
           <Button>Register</Button>
         </div>
+        {error && <div className="error">{error}</div>}
       </form>
     </div>
   );
