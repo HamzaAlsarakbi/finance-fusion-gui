@@ -21,8 +21,8 @@ const LoginComponent: React.FC = () => {
   };
 
   return (
-    <div className="login-component glow-top flex flex-col px-4 gap-1 rounded-medium">
-      <h1 className="title fancy-text">Finance Fusion</h1>
+    <div className="login-component glow-top flex flex-col px-4 py-4 gap-1 rounded-medium">
+      <h1 className="title fancy-text shadow-md">Finance Fusion</h1>
       <h2>Login</h2>
       <form onSubmit={handleSubmit} className="flex flex-col px-4 gap-1">
         <Input

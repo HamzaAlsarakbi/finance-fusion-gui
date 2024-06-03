@@ -1,8 +1,9 @@
 {
+  "$schema": "http://json.schemastore.org/prettierrc",
+  "arrowParens": "always",
   "editor.formatOnSave": true,
   "printWidth": 80,
   "tabWidth": 2,
   "singleQuote": true,
-  "trailingComma": "es5",
-  "parser": "typescript"
+  "trailingComma": "all"
 }
