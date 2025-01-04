@@ -1,5 +1,5 @@
 .login-component {
   max-width: 400px;
   max-height: 700px;
-  box-shadow: 4px 4px 4px solid hsla(0, 0%, 0%, 0.4);
+  text-shadow: 4px 4px 4px solid hsla(0, 0%, 0%, 0.4);
 }

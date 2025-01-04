@@ -1,0 +1,30 @@
+/**
+ * Splash screen hints.
+ */
+export const SPLASH_HINTS = [
+  'Balancing sheets...',
+  'Crunching the numbers...',
+  'Counting coins and commas...',
+  'Stacking your cash flows...',
+  'Auditing imaginary friends...',
+  'Converting pennies into dreams...',
+  'Filing away the fun...',
+  'Inflating your wealth, not your ego...',
+  'Forecasting better days...',
+  'Compounding your patience...',
+  'Chasing down loose change...',
+  'Polishing the piggy bank...',
+  'Loading your financial fortune...',
+  'Diving into the data pool...',
+  'Unpacking your assets...',
+  'Clearing the expense fog...',
+  'Balancing the budget seesaw...',
+  'Negotiating with your wallet...',
+  'Mapping out the money maze...',
+  'Calculating every penny’s worth...',
+  'Tracking down missing cents...',
+  'Sharpening the spreadsheets...',
+  'Herding rogue transactions...',
+  'Summoning the money genie...',
+  'Investing in smoother loading...',
+];

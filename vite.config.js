@@ -18,4 +18,8 @@ export default defineConfig({
       exclude: ["node_modules", "dist"],
     }),
   ],
+  server: {
+    host: '127.0.0.1',
+    port: 3000,
+  }
 });
