@@ -1,4 +1,4 @@
-const REST_PORT = 5000;
+const REST_PORT = 8000;
 const REST_HOST = `http://localhost:${REST_PORT}`;
 
 export const REST = {

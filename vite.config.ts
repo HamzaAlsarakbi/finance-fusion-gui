@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import eslintPlugin from "vite-plugin-eslint";
+// @ts-ignore
+import eslint from "vite-plugin-eslint";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,17 +10,14 @@ export default defineConfig({
     alias: {
       "@": "/src",
     },
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
   plugins: [
     react(),
-    eslintPlugin({
+    eslint({
       cache: false,
       include: ["src/**/*.ts", "src/**/*.tsx"],
       exclude: ["node_modules", "dist"],
     }),
-  ],
-  server: {
-    host: '127.0.0.1',
-    port: 3000,
-  }
+  ]
 });

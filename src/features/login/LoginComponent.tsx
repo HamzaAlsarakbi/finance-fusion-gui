@@ -1,4 +1,4 @@
-import { Button, Input } from '@nextui-org/react';
+import { Button, Input } from '@heroui/react';
 import React, { useEffect, useState } from 'react';
 import { PasswordInput } from '@/components/PasswordInput/PasswordInput';
 import './LoginComponent.css';

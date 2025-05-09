@@ -1,4 +1,4 @@
-import { Input, InputProps } from '@nextui-org/react';
+import { Input, InputProps } from '@heroui/react';
 import { useState } from 'react';
 import { EyeSlashFilledIcon } from '@/components/icons/EyeSlashFilledIcon';
 import { EyeFilledIcon } from '@/components/icons/EyeFilledIcon';

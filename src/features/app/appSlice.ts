@@ -1,7 +1,7 @@
 import { Theme } from '@/assets/themes/themes';
 import { StateCreator } from 'zustand';
 
-export type AppPath = 'login' | 'splash' | 'dashboard';
+export type AppPath = 'login' | 'splash' | 'dashboard' | 'clock_menu';
 
 export interface AppSlice {
   app: {
